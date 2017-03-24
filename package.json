@@ -7,8 +7,9 @@
     "mdt-new": "./bin/create.js"
   },
   "scripts": {
-    "lint": "standard --plugin flowtype",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "flow": "flow check lib/",
+    "lint": "standard --plugin flowtype lib/",
+    "test": "npm run flow"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
   "dependencies": {
     "editor": "^1.0.0",
     "minimist": "^1.2.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "eslint-plugin-flowtype": "^2.30.4",

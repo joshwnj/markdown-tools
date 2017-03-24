@@ -11,19 +11,16 @@
 */
 
 const minimist = require('minimist')
-const mkdirp = require('mkdirp')
 const main = require('../lib/main')
 
 const argv = minimist(process.argv.slice(2))
-const entryDir = argv.d || process.cwd()
 
 const heading = (argv.h || '').trim()
 const message = (argv.m || '').trim()
 const opts = {
+  entryDir: argv.d || process.cwd(),
   suppressEditor: Boolean(argv.noeditor),
   verboseOutput: Boolean(argv.verbose)
 }
-
-mkdirp.sync(entryDir)
 
 main(opts, heading, message)
